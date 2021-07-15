@@ -8,5 +8,7 @@ module.exports = async (req, res, next) => {
     const user = await jwt.verify(token, process.env.TOKEN_SECRET);
     console.log(user);
     next();
-  } catch (error) {}
+  } catch (error) {
+    res.status(400).json({ message: error });
+  }
 };
