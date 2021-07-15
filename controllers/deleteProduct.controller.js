@@ -5,12 +5,11 @@ module.exports = async (req, res) => {
   try {
     const result = await Product.findByIdAndDelete(id);
     if (result) {
-      res.json({ message: "Product deleted successfully" });
+      res.status(200).json({ message: "Product deleted successfully" });
     } else {
-      res.json({ message: "Product was not found" });
+      res.status(204).json({ message: "Product was not found" });
     }
   } catch (error) {
-    res.json({ message: error });
+    res.status(400).json({ message: error });
   }
-  res.json({ message: "hello" });
 };
