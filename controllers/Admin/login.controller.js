@@ -15,7 +15,10 @@ module.exports = async (req, res) => {
       if (!passwordMatched) {
         return res.json({ message: "Password or email does not match" });
       } else {
-        return res.status(200).json({ message: "You have successfully login" });
+        const token = await JWT.sign(email, process.env.TOKEN_SECRET);
+        return res
+          .status(200)
+          .json({ token, message: "You have successfully login" });
       }
     } else {
       return res.json({ message: "No such user found" });
