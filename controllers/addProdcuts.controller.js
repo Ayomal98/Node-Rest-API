@@ -9,6 +9,6 @@ module.exports = async (req, res) => {
     console.log("Product Created");
   } catch (error) {
     console.log(error);
-    res.json({ message: "Product Failed to added" });
+    res.json({ error: { message: "Product Failed to added" } });
   }
 };
