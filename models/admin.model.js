@@ -11,7 +11,7 @@ const adminSchema = new Schema(
       lastName: { type: String },
     },
     address: {
-      city: { type: String, required: true },
+      city: { type: String },
       street: { type: String, required: true },
       houseNumber: { type: Number, required: true },
     },
