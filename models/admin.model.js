@@ -8,7 +8,7 @@ const adminSchema = new Schema(
     password: { type: String, required: true },
     name: {
       firstName: { type: String, required: true },
-      lastName: { type: String, required: true },
+      lastName: { type: String },
     },
     address: {
       city: { type: String, required: true },
